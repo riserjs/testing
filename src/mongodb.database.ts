@@ -1,4 +1,4 @@
-import { Database, Initiate, Logger } from 'quartzjs'
+import { Database, Initiate, Logger } from 'riser'
 import { connect } from 'mongoose'
 
 @Database()

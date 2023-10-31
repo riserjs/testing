@@ -1,4 +1,4 @@
-import { Component, State, Receptor, Emitter, Initiate, Property } from 'quartzjs'
+import { Component, State, Receptor, Emitter, Initiate, Property } from 'riser'
 
 @Component()
 export class MessageComponent {

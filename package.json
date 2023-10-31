@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "testing",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "start": "node dist/main.js"
   },
   "dependencies": {
-    "mongoose": "^7.5.3",
-    "riser": "^0.3.3"
+    "mongoose": "^8.0.0",
+    "riser": "^0.3.9"
   }
 }

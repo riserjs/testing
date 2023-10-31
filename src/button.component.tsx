@@ -1,4 +1,4 @@
-import { Component, Property } from 'quartzjs'
+import { Component, Property } from 'riser'
 
 @Component()
 export class ButtonComponent {

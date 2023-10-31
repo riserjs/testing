@@ -1,4 +1,4 @@
-import { Component, State, Receptor, Emitter } from 'quartzjs'
+import { Component, State, Receptor, Emitter } from 'riser'
 
 @Component( )
 export class InputComponent {

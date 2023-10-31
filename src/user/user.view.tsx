@@ -1,4 +1,4 @@
-import { View, Navigate, Emitter } from 'quartzjs'
+import { View, Navigate, Emitter } from 'riser'
 import { ButtonComponent } from '../button.component'
 import { UserComponent } from './user.component'
 

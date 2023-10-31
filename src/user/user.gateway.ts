@@ -1,4 +1,4 @@
-import { Gateway, Request, Response, Logger, Expose } from 'quartzjs'
+import { Gateway, Request, Response, Logger, Expose } from 'riser'
 import { User } from './user.model'
 
 @Gateway( '/user' )

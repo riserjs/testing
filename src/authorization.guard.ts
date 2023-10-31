@@ -1,4 +1,4 @@
-import { Guard, Intercept, Logger } from 'quartzjs'
+import { Guard, Intercept, Logger } from 'riser'
 
 @Guard( )
 export class AuthorizationGuard {

@@ -1,4 +1,4 @@
-import { Component, Emitter, Navigate, Receptor, State } from 'quartzjs'
+import { Component, Emitter, Navigate, Receptor, State } from 'riser'
 import { ButtonComponent } from '../button.component'
 
 @Component()

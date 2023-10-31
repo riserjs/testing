@@ -1,4 +1,4 @@
-import { View, Navigate, Parameter } from 'quartzjs'
+import { View, Navigate, Parameter } from 'riser'
 import { ButtonComponent } from '../button.component'
 import { MessageComponent } from './message.component'
 
