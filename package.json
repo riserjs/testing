@@ -1,0 +1,16 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "npx quartzjs dev",
+    "build": "npx quartzjs build",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "mongoose": "^7.5.3",
+    "quartzjs": "^0.3.3"
+  }
+}
