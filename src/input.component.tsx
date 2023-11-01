@@ -20,12 +20,6 @@ export class InputComponent {
 		this.pass = true
 		this.name = 'XD'
 		this.obj.a = 1
-		Emitter( '/x', { a: 1 } )
-	}
-
-	@Receptor( '/abc' )
-	x( msg: any ) {
-		console.log( msg )
 	}
 
 	render( ) {

@@ -37,7 +37,7 @@ export class UserComponent {
 					</button>
 				</div> :
 				<ul class="m-4 mt-0 list-none list-inside text-blue-dark border w-[363px] h-[220px] overflow-auto rounded">
-					{ this.users && this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => Navigate( `/message?from=${this.from}&to=${u.name}` )}>{ u.name }</li> ) }
+					{ this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => Navigate( `/message?from=${ this.from }&to=${ u.name }` )}>{ u.name }</li> ) }
 				</ul> }
   		</>
   	)
