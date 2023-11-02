@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "mongoose": "^8.0.0",
-    "riser": "^0.3.14"
+    "riser": "^0.3.17"
   }
 }

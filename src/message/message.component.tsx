@@ -18,7 +18,7 @@ export class MessageComponent {
 
 	@Receptor( '/message/readall' )
 	onReadAll( messages: any ) {
-		this.messages = messages.reverse( )
+		this.messages = messages
 	}
 
 	@Receptor( '/message/read' )
