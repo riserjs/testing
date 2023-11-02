@@ -4,21 +4,20 @@ import { User } from './user.model'
 @Gateway( '/user' )
 export class UserGateway {
 
-	@Expose( )
 	@Logger( )
 	@Request( '/create' )
-	async onCreate( name: string ) {
+	async onCreate( { client, message }: any ) {
 		
-		const index = await User.findOne( { name } )
+		const index = await User.findOne( { name: message } )
 
 		if ( !index ) {
-			const user = new User( { name } )
+			const user = new User( { name: message } )
 			await user.save( )	
 		}
 		
-		const users = await User.find( { name: { $ne: name } }, { _id: 0, __v: 0 } )
+		const users = await User.find( { name: { $ne: message } }, { _id: 0, __v: 0 } )
 
-		return Response( '/user/read', users )
+		return Response( '/user/read', { client, message: users } )
 	}
 
 }

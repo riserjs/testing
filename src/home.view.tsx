@@ -1,4 +1,4 @@
-import { View, Navigate, Emitter } from 'riser'
+import { View, Navigate, Emitter, Initiate } from 'riser'
 import { ButtonComponent } from './button.component'
 import Logo from './assets/logo.png'
 import { InputComponent } from './input.component'

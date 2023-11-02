@@ -1,4 +1,4 @@
-import { Component, Emitter, Navigate, Receptor, State } from 'riser'
+import { Component, Emitter, Navigate, Receptor, State, Client } from 'riser'
 import { ButtonComponent } from '../button.component'
 
 @Component()
@@ -9,12 +9,20 @@ export class UserComponent {
 	@State()
 	users: string[] = []
 
+	@State()
+	pass: boolean = false
+
 	register( ) {
-		if ( this.from ) Emitter( '/user/create', this.from )
+		if ( this.from != '' ) {
+			Client( this.from )
+			Emitter( '/user/create', this.from )
+		}
 	}
 
 	@Receptor( '/user/read' )
 	getList( users: any ) {
+		console.log(users)
+		this.pass = true
 		this.users = users
 	}
 
@@ -22,7 +30,7 @@ export class UserComponent {
 		return (
   		<>
 				<ButtonComponent label={ 'Go to home!' } onClick={ () => Navigate( '/' ) }/>
-				{ this.users.length == 0 ?
+				{ this.pass == false ?
 				<div class="flex m-4">
 					<input
 						type="text"
