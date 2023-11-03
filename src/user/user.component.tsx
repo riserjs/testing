@@ -14,7 +14,6 @@ export class UserComponent {
 
 	register( ) {
 		if ( this.from == '' ) return
-		Client( this.from )
 		Emitter( '/user/create', this.from )
 	}
 
@@ -22,6 +21,7 @@ export class UserComponent {
 	getList( users: any ) {
 		this.pass = true
 		this.users = users
+		Client( this.from )
 	}
 
 	render( ) {

@@ -9,7 +9,7 @@ export class MessageGateway {
 	async onCreate( { client, message }: any ) {
 		const index = new Message( { ...message, users: [ message.from, message.to ] } )
 		await index.save( )
-		Broadcast( '/message/read', { client: message.from, message } )
+		Broadcast( '/message/read', { client, message } )
 		Broadcast( '/message/read', { client: message.to, message } )
 	}
 
