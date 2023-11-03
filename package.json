@@ -10,7 +10,10 @@
     "start": "node dist/main.js"
   },
   "dependencies": {
+    "memfs": "^4.6.0",
     "mongoose": "^8.0.0",
-    "riser": "^0.3.17"
+    "riser": "^0.3.17",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-shell-plugin": "^0.5.0"
   }
 }

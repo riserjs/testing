@@ -13,15 +13,13 @@ export class UserComponent {
 	pass: boolean = false
 
 	register( ) {
-		if ( this.from != '' ) {
-			Client( this.from )
-			Emitter( '/user/create', this.from )
-		}
+		if ( this.from == '' ) return
+		Client( this.from )
+		Emitter( '/user/create', this.from )
 	}
 
 	@Receptor( '/user/read' )
 	getList( users: any ) {
-		console.log(users)
 		this.pass = true
 		this.users = users
 	}

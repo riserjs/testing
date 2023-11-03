@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model, models } from 'mongoose'
 
-export const User = model( 'user', new Schema( {
+export const User = models.user || model( 'user', new Schema( {
 	name: { type: String, unique: true }
 } ) )
