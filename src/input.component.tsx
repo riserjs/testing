@@ -1,4 +1,4 @@
-import { Component, State, Receptor, Emitter } from 'riser'
+import { Component, State } from 'riser'
 
 @Component( )
 export class InputComponent {
@@ -23,20 +23,20 @@ export class InputComponent {
 	}
 
 	render( ) {
-		setTimeout( this.update, 1500 )
+		setTimeout( this.update, 1500 )	
+		
   	return (
 			<>
 				<div onclick={ this.update }>Click</div>
 				<div none={ this.name }>{ this.name }</div>
-				<div>{ `${this.name}` }</div>
-				{ this.arr.map( ( e: number ) => <div>{ e }</div> ) }
+				<>{ `${this.name}` }</>
+				{ this.arr.map( ( e: number ) => <>{ e }</> ) }
 				{ this.name }
-				{ this.pass ? <div>YES</div> : <div>NOT</div> }
+				{ this.pass ? <>YES</> : <>NOT</> }
 				{ this.obj.a || this.obj.b }
-				{ [ 'a', 'b' ].map( ( e: string ) => <div>{ e }</div> ) }
-				{ this.arr.map( ( e: number ) => <div>{ e }</div> ) }
-				<div>c</div>
-				<div>d</div>
+				{ [ 'a', 'b' ].map( ( e: string ) => <>{ e }</> ) }
+				{ this.arr.map( ( e: number ) => <>{ e }</> ) }
+				<>c</>
 			</>
   	)
 	}
