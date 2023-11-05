@@ -1,0 +1,20 @@
+{
+  "appname": "test",
+  "development": {
+    "port": 3000
+  },
+  "broker": {
+    "name": "mqtt",
+    "ip": "localhost",
+    "port": 9001,
+    "username": "root",
+    "password": "root"
+  },
+  "database": {
+    "name": "mongodb",
+    "ip": "localhost",
+    "port": 27017,
+    "username": "root",
+    "password": "root"
+  }
+}

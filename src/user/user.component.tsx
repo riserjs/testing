@@ -12,7 +12,8 @@ export class UserComponent {
 	@State()
 	pass: boolean = false
 
-	register( ) {
+	click( ) {
+		//alert(`touch-${this.from}`)
 		if ( this.from == '' ) return
 		Emitter( '/user/create', this.from )
 	}
@@ -34,11 +35,11 @@ export class UserComponent {
 						type="text"
 						placeholder="What's your name?"
 						class="py-2 px-2 text-md border focus:outline-none rounded"
-						onKeyUp={ ( e: any ) => this.from = e.target.value }
+						onchange={ ( e: any ) => this.from = e.target.value }
 					/>
 					<button
 						class="ml-4 w-20 flex items-center justify-center border rounded text-blue-dark"
-						onClick={ this.register }
+						onclick={ this.click }
 					>Register
 					</button>
 				</div> :
