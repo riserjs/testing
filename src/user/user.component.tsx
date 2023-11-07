@@ -1,10 +1,10 @@
-import { Component, Emitter, Navigate, Receptor, State, Client } from 'riser'
-import { ButtonComponent } from '../button.component'
+import { Component, Publish, Navigate, Subscribe, State, Client } from 'riser'
+import { Button, Input } from 'riser/interface'
 
 @Component()
 export class UserComponent {
 
-	from: string = ''
+	from: string = 'x'
 
 	@State()
 	users: string[] = []
@@ -13,12 +13,11 @@ export class UserComponent {
 	pass: boolean = false
 
 	click( ) {
-		//alert(`touch-${this.from}`)
 		if ( this.from == '' ) return
-		Emitter( '/user/create', this.from )
+		Publish( '/user/create', this.from )
 	}
 
-	@Receptor( '/user/read' )
+	@Subscribe( '/user/read' )
 	getList( users: any ) {
 		this.pass = true
 		this.users = users
@@ -26,22 +25,14 @@ export class UserComponent {
 	}
 
 	render( ) {
+		setInterval( ()=>console.log(this.from),2000)
 		return (
   		<>
-				<ButtonComponent label={ 'Go to home!' } onClick={ () => Navigate( '/' ) }/>
+				<Button label={ 'Go to home!' } onClick={ () => Navigate( '/' ) }/>
 				{ this.pass == false ?
 				<div class="flex m-4">
-					<input
-						type="text"
-						placeholder="What's your name?"
-						class="py-2 px-2 text-md border focus:outline-none rounded"
-						onchange={ ( e: any ) => this.from = e.target.value }
-					/>
-					<button
-						class="ml-4 w-20 flex items-center justify-center border rounded text-blue-dark"
-						onclick={ this.click }
-					>Register
-					</button>
+					<Input placeholder={ "What's your name?" } value={this.from}/>
+					<Button label={ 'Register' } onClick={ this.click }/>
 				</div> :
 				<ul class="m-4 mt-0 list-none list-inside text-blue-dark border w-[363px] h-[220px] overflow-auto rounded">
 					{ this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => Navigate( `/message?from=${ this.from }&to=${ u.name }` )}>{ u.name }</li> ) }

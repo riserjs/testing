@@ -1,7 +1,7 @@
 import { Component, State } from 'riser'
 
 @Component( )
-export class InputComponent {
+export class Input {
 
 	@State( )
 	name: string = 'xd'

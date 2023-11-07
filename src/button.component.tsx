@@ -1,12 +1,12 @@
 import { Component, Property } from 'riser'
 
-@Component()
+@Component( )
 export class ButtonComponent {
 
-	@Property()
+	@Property( )
 	label: string
 
-	@Property()
+	@Property( )
 	onClick: any
 
 	render( ) {

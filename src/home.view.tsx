@@ -1,7 +1,7 @@
-import { View, Navigate, Emitter, Initiate } from 'riser'
-import { ButtonComponent } from './button.component'
+import { View, Navigate } from 'riser'
 import Logo from './assets/logo.png'
-import { InputComponent } from './input.component'
+import { HomeComponent } from './home.component'
+import { Button } from 'riser/interface'
 
 @View( '/' )
 export class HomeView {
@@ -11,10 +11,9 @@ export class HomeView {
 	render( ) {
   	return (
   		<>
-				<ButtonComponent label={ 'Go to user!' } onClick={ () => Navigate( '/user' ) }/>
-				<ButtonComponent label={ 'Request check if is exposed!' } onClick={ () => Emitter( '/user/create', { a: 1, b: '', boolean: true } ) }/>
+				<Button label={ 'Go to user!' } onClick={ () => Navigate( '/user' ) }/>
 				<img src={ Logo } width={ this.width } />
-				<InputComponent />
+				<HomeComponent />
   		</>
   	)
 	}

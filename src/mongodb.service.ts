@@ -1,8 +1,8 @@
-import { Database, Initiate, Logger } from 'riser'
+import { Service, Initiate, Logger } from 'riser'
 import { connect } from 'mongoose'
 
-@Database()
-export class MongodbDatabase {
+@Service()
+export class MongodbService {
 
 	@Initiate( )
 	async connect( ) {

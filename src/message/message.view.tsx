@@ -1,6 +1,7 @@
 import { View, Navigate, Parameter } from 'riser'
-import { ButtonComponent } from '../button.component'
+import { Button } from 'riser/interface'
 import { MessageComponent } from './message.component'
+
 
 @View( '/message' )
 export class MessageView {
@@ -14,7 +15,7 @@ export class MessageView {
 	render( ) {
 		return (
   		<>
-				<ButtonComponent label={ 'Go to user!' } onClick={ () => Navigate( '/user' ) }/>	
+				<Button label={ 'Go to user!' } onClick={ () => Navigate( '/user' ) }/>	
 				<MessageComponent users={ { from: this.from, to: this.to }} />
   		</>
   	)

@@ -1,4 +1,5 @@
-import { Component, State, Receptor, Emitter, Initiate, Property } from 'riser'
+import { Component, State, Subscribe, Publish, Initiate, Property } from 'riser'
+import { Button, Input } from 'riser/interface'
 
 @Component()
 export class MessageComponent {
@@ -6,55 +7,46 @@ export class MessageComponent {
 	@Property( )
 	users: any
 
-	input: any
+	value: string= '2'
 
 	@State()
 	messages: any[] = [ ]
 
 	@Initiate( )
 	readAll( ) {
-		Emitter( '/message/readall', this.users )
+		Publish( '/message/readall', this.users )
 	}
 
-	@Receptor( '/message/readall' )
+	@Subscribe( '/message/readall' )
 	onReadAll( messages: any ) {
 		this.messages = messages
 	}
 
-	@Receptor( '/message/read' )
+	@Subscribe( '/message/read' )
 	onRead( message: any ) {
 		if ( this.messages.length > 9 ) this.messages.shift() 
 		this.messages.push( message )
 	}
 
 	onCreate( ) {
-		if ( this.input.value != '' ) {
-			Emitter( '/message/create', { ...this.users, message: this.input.value } )
-			this.input.value = ''
+		if ( this.value != '' ) {
+			Publish( '/message/create', { ...this.users, message: this.value } )
+			this.value = ''
 		}
 	}
 
 	render( ) {
   	return (
   		<>
-				<div class="m-4">{`Talking with ${this.users.to}`}</div>
+				<div class="m-4" attr={1}>{`Talking with ${this.users.to}`}</div>
 				<ul class="m-4 mt-0 list-none list-inside text-blue-dark border w-[363px] h-[250px] overflow-auto rounded">
 					{ this.messages.map( ( m: any ) => ( <li>
 						<div class={ m.from == this.users.from ? 'flex justify-start' : 'flex justify-end' }>{ m.message }</div>
 					</li> ) )}
 				</ul>
 				<div class="flex m-4">
-					<input
-						type="text"
-						placeholder={`${this.users.from}, can write here..`}
-						class="py-2 px-2 text-md border focus:outline-none rounded"
-						onKeyUp={ ( { target }: any ) => { this.input = target } }
-					/>
-					<button
-						class="ml-4 w-20 flex items-center justify-center border rounded text-blue-dark"
-						onClick={ this.onCreate }
-					>Send
-					</button>
+					<Input placeholder={ `${this.users.from}, can write here..` } value={ this.value }/>
+					<Button label={ 'Send' } onClick={ this.onCreate }/>
 				</div>
   		</>
   	)

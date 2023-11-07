@@ -100,7 +100,7 @@
     lru-cache "^5.1.1"
     semver "^6.3.1"
 
-"@babel/helper-create-class-features-plugin@^7.22.11", "@babel/helper-create-class-features-plugin@^7.22.15", "@babel/helper-create-class-features-plugin@^7.22.5":
+"@babel/helper-create-class-features-plugin@^7.18.6", "@babel/helper-create-class-features-plugin@^7.22.11", "@babel/helper-create-class-features-plugin@^7.22.15", "@babel/helper-create-class-features-plugin@^7.22.5":
   version "7.22.15"
   resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.22.15.tgz#97a61b385e57fe458496fad19f8e63b63c867de4"
   integrity sha512-jKkwA59IXcvSaiK2UN45kKwSC9o+KuoXsBDvHvU/7BecYIp8GQ2UwrVvFgJASUT+hBnwJx6MhvMCuMzwZZ7jlg==
@@ -293,6 +293,14 @@
     "@babel/helper-plugin-utils" "^7.22.5"
     "@babel/helper-skip-transparent-expression-wrappers" "^7.22.5"
     "@babel/plugin-transform-optional-chaining" "^7.22.15"
+
+"@babel/plugin-proposal-class-properties@^7.18.6":
+  version "7.18.6"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.18.6.tgz#b110f59741895f7ec21a6fff696ec46265c446a3"
+  integrity sha512-cumfXOF0+nzZrrN8Rf0t7M+tF6sZc7vhQwYQck9q1/5w2OExlD+b4v4RpMJFaV1Z7WcDRgO6FqvxqxGlwo+RHQ==
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.18.6"
+    "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/plugin-proposal-decorators@^7.22.15":
   version "7.23.2"
@@ -4299,6 +4307,11 @@ rechoir@^0.8.0:
   dependencies:
     resolve "^1.20.0"
 
+reflect-metadata@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
+
 regenerate-unicode-properties@^10.1.0:
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-10.1.1.tgz#6b0e05489d9076b04c436f318d9b067bba459480"
@@ -4421,13 +4434,14 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-riser@^0.3.25:
-  version "0.3.25"
-  resolved "https://registry.yarnpkg.com/riser/-/riser-0.3.25.tgz#4116e8490d1c9641fe8908eba11ef21f91ac1456"
-  integrity sha512-MGbiU0OFMai5drFgaGGzHYFI68n/CjwznANL5jTwLCJ1TPX2BNs0IaQcRHkDCq0DOJasiRvC1YDp7r6TfyHQjg==
+riser@^0.3.30:
+  version "0.3.30"
+  resolved "https://registry.yarnpkg.com/riser/-/riser-0.3.30.tgz#8a30ea91b12d0dfe73eb4c5866bcc59b765f69f1"
+  integrity sha512-QG70S2DKHTH1VBLZNJ0ApLN5a0VallAmgCV+M0JcpASJLjg0KEJV6eF5BontdmFfA2AtShxLDWDRbm03WaBLXA==
   dependencies:
     "@babel/cli" "^7.22.15"
     "@babel/core" "^7.22.15"
+    "@babel/plugin-proposal-class-properties" "^7.18.6"
     "@babel/plugin-proposal-decorators" "^7.22.15"
     "@babel/plugin-syntax-decorators" "^7.22.10"
     "@babel/preset-env" "^7.22.14"
@@ -4445,6 +4459,7 @@ riser@^0.3.25:
     postcss-loader "^7.3.3"
     postcss-preset-env "^9.1.4"
     quill-delta "^5.1.0"
+    reflect-metadata "^0.1.13"
     rxjs "^7.8.1"
     style-loader "^3.3.3"
     tailwindcss "^3.3.3"

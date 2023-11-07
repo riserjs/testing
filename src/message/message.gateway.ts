@@ -6,18 +6,16 @@ export class MessageGateway {
 
 	@Logger( 'in' )
 	@Request( '/create' )
-	async onCreate( { client, message }: any ) {
-		const index = new Message( { ...message, users: [ message.from, message.to ] } )
-		await index.save( )
-		Broadcast( '/message/read', { client, message } )
-		Broadcast( '/message/read', { client: message.to, message } )
+	async onCreate( { message }: Request ) {
+		await Message.create( { ...message, users: [ message.from, message.to ] } )
+		Broadcast( { clients: [ message.from, message.to ], path: '/message/read', message } )
 	}
 
-	@Logger( 'out' )
+	@Logger( 'in' )
 	@Request( '/readall' )
-	async onReadAll( { client, message }: any ) {
-		const all = await Message.find( { users: { '$all': [ message.from, message.to ] } }, { _id: 0, __v: 0, users: 0 } ).sort( {$natural : -1} ).limit( 10 )
-		return Response( '/message/readall', { client, message: all.reverse( ) } )
+	async onReadAll( { message }: Request ): Promise < Response > {
+		const all = await Message.find( { users: { '$all': [ message.from, message.to ] } }, { _id: 0, __v: 0, users: 0 } ).sort( { $natural : -1 } ).limit( 10 )
+		return Response( '/message/readall', all.reverse( ) )
 	}
 
 }
