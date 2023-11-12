@@ -4,9 +4,6 @@ import { Button, Input } from 'riser/interface'
 @Component()
 export class UserComponent {
 
-	@State( )
-	label: string = '12312'
-
 	from: string = ''
 
 	@State()
@@ -28,12 +25,8 @@ export class UserComponent {
 	}
 
 	render( ) {
-		//console.log(this.label,this.label.q)
-		//setInterval( ()=>{this.label ='123'; console.log(this.label.q)}, 10000)
-
 		return (
   		<>
-				<Button label={ this.label } onClick={ () => Navigate( '/' ) }/>
 				{ this.pass == false ?
 				<div class="flex m-4">
 					<input
@@ -41,7 +34,7 @@ export class UserComponent {
 						class="py-2 px-2 text-md border focus:outline-none rounded"
 						onchange={ ( e: any ) => this.from = e.target.value }
 					/>
-					<Button label={ this.label } onClick={ this.onRegister }/>
+					<Button label={ 'Register' } onClick={ this.onRegister }/>
 				</div> :
 				<ul class="m-4 mt-0 list-none list-inside text-blue-dark border w-[363px] h-[220px] overflow-auto rounded">
 					{ this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => Navigate( `/message?from=${ this.from }&to=${ u.name }` )}>{ u.name }</li> ) }

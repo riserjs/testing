@@ -1,4 +1,4 @@
-import { Component, State, Subscribe, Publish, Initiate, Property } from 'riser'
+import { Component, State, Subscribe, Publish, Property } from 'riser'
 import { Button, Input } from 'riser/interface'
 
 @Component()
@@ -9,7 +9,7 @@ export class MessageComponent {
 
 	input: any
 
-	@State()
+	@State( )
 	messages: any[] = [ ]
 
 	onMount( ) {

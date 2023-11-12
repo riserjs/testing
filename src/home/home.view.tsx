@@ -1,8 +1,8 @@
 import { View, Navigate } from 'riser'
-import Logo from '../assets/logo.png'
 import { HomeComponent } from './home.component'
 import { Button } from 'riser/interface'
 
+import Logo from '../assets/logo.png'
 @View( '/' )
 export class HomeView {
 
@@ -11,7 +11,7 @@ export class HomeView {
 	render( ) {
   	return (
   		<>
-				<Button label={'Go to user!'} onclick={ () => Navigate( '/user' ) }/>
+				<Button label={'Go to user!'} onClick={ () => Navigate( '/user' ) }/>
 				<img src={ Logo } width={ this.width } />
 				<HomeComponent />
   		</>

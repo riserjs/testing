@@ -2,14 +2,13 @@ import { View, Navigate, Parameter } from 'riser'
 import { Button } from 'riser/interface'
 import { MessageComponent } from './message.component'
 
-
 @View( '/message' )
 export class MessageView {
 
-	@Parameter()
+	@Parameter( )
 	from: string
 
-	@Parameter()
+	@Parameter( )
 	to: string
 
 	render( ) {
