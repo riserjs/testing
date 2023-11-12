@@ -6,11 +6,10 @@
   "private": true,
   "scripts": {
     "dev": "npx riser dev",
-    "build": "npx riser build",
-    "start": "node dist/main.js"
+    "build": "npx riser build"
   },
   "dependencies": {
     "mongoose": "^8.0.0",
-    "riser": "^0.3.30"
+    "riser": "^0.3.41"
   }
 }

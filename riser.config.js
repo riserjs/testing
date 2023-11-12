@@ -1,15 +1,15 @@
 module.exports = ( mode ) => {
   return {
-    appname: "test",
+    appname: 'test',
     development: {
       port: 3000
     },
     broker: {
-      name: "mqtt",
-      host: "localhost",
+      name: 'mqtt',
+      host: 'localhost',
       port: 9001,
-      username: "root",
-      password: "root"
+      username: 'root',
+      password: 'root'
     }
   }
 }

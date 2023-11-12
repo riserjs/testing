@@ -4434,16 +4434,20 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-riser@^0.3.30:
-  version "0.3.30"
-  resolved "https://registry.yarnpkg.com/riser/-/riser-0.3.30.tgz#8a30ea91b12d0dfe73eb4c5866bcc59b765f69f1"
-  integrity sha512-QG70S2DKHTH1VBLZNJ0ApLN5a0VallAmgCV+M0JcpASJLjg0KEJV6eF5BontdmFfA2AtShxLDWDRbm03WaBLXA==
+riser@^0.3.41:
+  version "0.3.41"
+  resolved "https://registry.yarnpkg.com/riser/-/riser-0.3.41.tgz#e01b105f1ff3ca669acf782f3d3a0e65150cf39a"
+  integrity sha512-3Z9HyjR0UzekDm6UN6cZJoQqrt//LLgu95uXVhWX3ckPa4VXm6AtK/K6D0MLNhTfGARrjwobKYEcA4U0z+FX5A==
   dependencies:
     "@babel/cli" "^7.22.15"
     "@babel/core" "^7.22.15"
     "@babel/plugin-proposal-class-properties" "^7.18.6"
     "@babel/plugin-proposal-decorators" "^7.22.15"
     "@babel/plugin-syntax-decorators" "^7.22.10"
+    "@babel/plugin-transform-class-properties" "^7.22.5"
+    "@babel/plugin-transform-optional-chaining" "^7.23.0"
+    "@babel/plugin-transform-private-methods" "^7.22.5"
+    "@babel/plugin-transform-private-property-in-object" "^7.22.11"
     "@babel/preset-env" "^7.22.14"
     "@babel/preset-react" "^7.22.15"
     "@babel/preset-typescript" "^7.22.11"

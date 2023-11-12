@@ -1,10 +1,11 @@
-import { Component, State } from 'riser'
+import { Component, Navigate, State } from 'riser'
+import  { Button } from 'riser/interface'
 
 @Component( )
-export class Input {
+export class HomeComponent {
 
 	@State( )
-	name: string = 'xd'
+	name: String = 'xd'
 
 	@State( )
 	arr: number[] = [ ]
@@ -23,10 +24,11 @@ export class Input {
 	}
 
 	render( ) {
-		setTimeout( this.update, 1500 )	
-		
+		setTimeout( this.update, 1500 )
   	return (
 			<>
+				<Button label={ this.name } onClick={ () => Navigate( '/user' ) }/>				
+				<div none={ this.name }>{ this.name }</div>
 				<div onclick={ this.update }>Click</div>
 				<div none={ this.name }>{ this.name }</div>
 				<>{ `${this.name}` }</>

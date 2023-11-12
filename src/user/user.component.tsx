@@ -4,7 +4,10 @@ import { Button, Input } from 'riser/interface'
 @Component()
 export class UserComponent {
 
-	from: string = 'x'
+	@State( )
+	label: string = '12312'
+
+	from: string = ''
 
 	@State()
 	users: string[] = []
@@ -12,7 +15,7 @@ export class UserComponent {
 	@State()
 	pass: boolean = false
 
-	click( ) {
+	onRegister( ) {
 		if ( this.from == '' ) return
 		Publish( '/user/create', this.from )
 	}
@@ -25,14 +28,20 @@ export class UserComponent {
 	}
 
 	render( ) {
-		setInterval( ()=>console.log(this.from),2000)
+		//console.log(this.label,this.label.q)
+		//setInterval( ()=>{this.label ='123'; console.log(this.label.q)}, 10000)
+
 		return (
   		<>
-				<Button label={ 'Go to home!' } onClick={ () => Navigate( '/' ) }/>
+				<Button label={ this.label } onClick={ () => Navigate( '/' ) }/>
 				{ this.pass == false ?
 				<div class="flex m-4">
-					<Input placeholder={ "What's your name?" } value={this.from}/>
-					<Button label={ 'Register' } onClick={ this.click }/>
+					<input
+						placeholder="What's your name?"
+						class="py-2 px-2 text-md border focus:outline-none rounded"
+						onchange={ ( e: any ) => this.from = e.target.value }
+					/>
+					<Button label={ this.label } onClick={ this.onRegister }/>
 				</div> :
 				<ul class="m-4 mt-0 list-none list-inside text-blue-dark border w-[363px] h-[220px] overflow-auto rounded">
 					{ this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => Navigate( `/message?from=${ this.from }&to=${ u.name }` )}>{ u.name }</li> ) }
