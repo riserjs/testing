@@ -8,7 +8,7 @@ export class HomeComponent {
 	name: String = 'xd'
 
 	@State( )
-	arr: number[] = [ ]
+	arr: number[] = [ 100, 200, 300 ]
 
 	@State( )
 	obj: any = { a: undefined, b: 2 }
