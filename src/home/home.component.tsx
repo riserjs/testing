@@ -8,10 +8,10 @@ export class HomeComponent {
 	name: String = 'xd'
 
 	@State( )
-	arr: number[] = [ 100, 200, 300 ]
+	arr: number[] = [ ]
 
 	@State( )
-	obj: any = { a: undefined, b: 2 }
+	obj: any = { a: undefined, b: 200 }
 
 	@State( )
 	pass: boolean = false
@@ -20,7 +20,7 @@ export class HomeComponent {
 		this.arr = [ 1, 2, 3 ]
 		this.pass = true
 		this.name = 'XD'
-		this.obj.a = 1
+		this.obj.a = 100
 	}
 
 	render( ) {

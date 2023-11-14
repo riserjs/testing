@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "ESNext",
+		"target": "es6",
+		"module": "es6",
 		"moduleResolution": "Node",
 		"esModuleInterop": true,
 		"jsx": "react",
@@ -11,6 +11,6 @@
 		"skipLibCheck": true,
 		"strictPropertyInitialization": false,
 		"experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": true
 	}
 }
