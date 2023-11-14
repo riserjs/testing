@@ -1,9 +1,9 @@
 import { Component, Publish, Navigate, Subscribe, State, Client } from 'riser'
 import { Button, Input } from 'riser/interface'
-import { Check } from '../../../Check'
-@Component()
+@Component( )
 export class UserComponent {
 
+	@State( )
 	input: string = ''
 
 	@State( )
@@ -27,11 +27,11 @@ export class UserComponent {
 	render( ) {
 		return (
   		<>
-				{ this.pass == false ?
 				<div class="flex m-4">
 					<Input placeholder={ 'Write your name!' } value={ this.input }/>
 					<Button label={ 'Register' } onClick={ this.onRegister }/>
-				</div> :
+				</div>
+				{ this.pass == false ? <></> :
 				<ul class="m-4 mt-0 list-none list-inside text-blue-dark border w-[363px] h-[220px] overflow-auto rounded">
 					{ this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => Navigate( `/message?from=${ this.input }&to=${ u.name }` )}>{ u.name }</li> ) }
 				</ul> }

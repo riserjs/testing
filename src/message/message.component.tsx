@@ -1,13 +1,14 @@
 import { Component, State, Subscribe, Publish, Property } from 'riser'
 import { Button, Input } from 'riser/interface'
 
-@Component()
+@Component( )
 export class MessageComponent {
 
 	@Property( )
 	users: any
 
-	input: any
+	@State( )
+	input: string = ''
 
 	@State( )
 	messages: any[] = [ ]
@@ -28,9 +29,9 @@ export class MessageComponent {
 	}
 
 	onCreate( ) {
-		if ( this.input.value != '' ) {
-			Publish( '/message/create', { ...this.users, message: this.input.value } )
-			this.input.value = ''
+		if ( this.input != '' ) {
+			Publish( '/message/create', { ...this.users, message: this.input } )
+			this.input = ''
 		}
 	}
 
@@ -44,16 +45,8 @@ export class MessageComponent {
 					</li> ) )}
 				</ul>
 				<div class="flex m-4">
-					<input
-						placeholder={ `${this.users.from}, can write here..` }
-						class="py-2 px-2 text-md border focus:outline-none rounded"
-						onchange={ ( event: any ) => this.input = event.target }
-					/>
-					<button
-						class="ml-4 w-20 flex items-center justify-center border rounded text-blue-dark"
-						onclick={ this.onCreate }
-					>Send
-					</button>
+					<Input placeholder={ `${this.users.from}, can write here..` } value={ this.input }/>
+					<Button label={ 'Send' } onClick={ this.onCreate }/>
 				</div>
   		</>
   	)

@@ -24,21 +24,19 @@ export class HomeComponent {
 	}
 
 	render( ) {
-		setTimeout( this.update, 1500 )
-  	return (
+		return (
 			<>
-				<Button label={ this.name } onClick={ () => Navigate( '/user' ) }/>				
+				<Button label={ 'Update elements' } onClick={ this.update }/>				
 				<div none={ this.name }>{ this.name }</div>
-				<div onclick={ this.update }>Click</div>
 				<div none={ this.name }>{ this.name }</div>
 				<>{ `${this.name}` }</>
 				{ this.arr.map( ( e: number ) => <>{ e }</> ) }
 				{ this.name }
 				{ this.pass ? <>YES</> : <>NOT</> }
 				{ this.obj.a || this.obj.b }
-				{ [ 'a', 'b' ].map( ( e: string ) => <>{ e }</> ) }
+				<>a</>
+				{ [ 'b', 'c' ].map( ( e: string ) => <>{ e }</> ) }
 				{ this.arr.map( ( e: number ) => <>{ e }</> ) }
-				<>c</>
 			</>
   	)
 	}
