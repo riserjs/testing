@@ -11,21 +11,23 @@ export class MessageComponent {
 	input: string = ''
 
 	@State( )
-	messages: any[] = [ ]
+	messages: string[] = [ ]
 
 	onMount( ) {
 		Publish( '/message/readall', this.users )
 	}
 
 	@Subscribe( '/message/readall' )
-	onReadAll( messages: any ) {
-		this.messages = messages
+	onReadAll( messages: string[] ) {
+		if ( messages ) this.messages = messages
 	}
 
 	@Subscribe( '/message/read' )
-	onRead( message: any ) {
-		if ( this.messages.length > 9 ) this.messages.shift() 
-		this.messages.push( message )
+	onRead( message: string ) {
+		if ( this.messages && message ) {
+			if ( this.messages?.length > 9 ) this.messages.shift( ) 
+			this.messages.push( message )
+		}
 	}
 
 	onCreate( ) {
