@@ -3,7 +3,7 @@ import { Button, Input } from 'riser/interface'
 @Component( )
 export class UserComponent {
 
-	selected: string = ''
+	user: string = ''
 
 	@State( )
 	input: string = ''
@@ -17,7 +17,7 @@ export class UserComponent {
 	onRegister( ) {
 		if ( this.input == '' ) return
 		Publish( '/user/create', this.input )
-		this.selected = this.input
+		this.user = this.input
 		this.input = ''
 	}
 
@@ -36,7 +36,7 @@ export class UserComponent {
 				</div>
 				{ this.pass == false ? <></> :
 				<ul class="m-4 mt-0 list-none list-inside text-blue-dark border w-[363px] h-[220px] overflow-auto rounded">
-					{ this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => { Client( this.input ); Navigate( `/message?from=${ this.selected }&to=${ u.name }` ) } }>{ u.name }</li> ) }
+					{ this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => { Client( this.input ); Navigate( `/message?from=${ this.user }&to=${ u.name }` ) } }>{ u.name }</li> ) }
 				</ul> }
   		</>
   	)
