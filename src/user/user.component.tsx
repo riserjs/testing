@@ -36,7 +36,7 @@ export class UserComponent {
 				</div>
 				{ this.pass == false ? <></> :
 				<ul class="m-4 mt-0 list-none list-inside text-blue-dark border w-[363px] h-[220px] overflow-auto rounded">
-					{ this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => { Client( this.input ); Navigate( `/message?from=${ this.user }&to=${ u.name }` ) } }>{ u.name }</li> ) }
+					{ this.users.map( ( u: any ) => <li class="h-[33px] border" onClick={ () => { Client( this.user ); Navigate( `/message?from=${ this.user }&to=${ u.name }` ) } }>{ u.name }</li> ) }
 				</ul> }
   		</>
   	)
