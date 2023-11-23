@@ -1,4 +1,4 @@
-import { Component, Navigate, State } from 'riser'
+import { Component, State } from 'riser'
 import  { Button } from 'riser/interface'
 
 @Component( )

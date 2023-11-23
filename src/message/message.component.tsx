@@ -37,8 +37,8 @@ export class MessageComponent {
 	}
 
 	render( ) {
-  	return (
-  		<>
+		return (
+			<>
 				<p class="m-4">{`Talking with ${ this.users.to }`}</p>
 				<ul class="m-4 mt-0 list-none list-inside text-blue-dark border w-[363px] h-[250px] overflow-auto rounded">
 					{ this.messages.map( ( m: any ) => ( <li>
@@ -49,7 +49,7 @@ export class MessageComponent {
 					<Input placeholder={ `${ this.users.from }, can write here..` } value={ this.input }/>
 					<Button label={ 'Send' } onClick={ this.onCreate }/>
 				</div>
-  		</>
-  	)
+			</>
+		)
 	} 
 }

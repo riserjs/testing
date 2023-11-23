@@ -1,8 +1,22 @@
-import { Component, Publish, Navigate, Subscribe, State, Client } from 'riser'
+import { Component, Publish, Navigate, Subscribe, State, Client, Observable } from 'riser'
 import { Button, Input } from 'riser/interface'
+import { UserStorage } from './user.storage'
+
+export const Obs = ( ) => ( target: any, key: string ) => { console.log( target, key ); target.__observables__ = [ key ] }
 
 @Component( )
 export class UserComponent {
+
+	//@Inject( )
+	storage: UserStorage
+
+	@Observable( )
+	myobserver: any
+
+	onMount( ) {
+		this.myobserver.subscribe( v => this.user = v )
+		this.myobserver.publish( 'caca' )
+	}
 
 	user: string = ''
 
