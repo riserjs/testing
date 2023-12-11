@@ -1,5 +1,5 @@
 import { Component, State } from 'riser'
-import  { Button } from 'riser/interface'
+import { Button } from 'riser/interface'
 
 @Component( )
 export class HomeComponent {
