@@ -1,32 +1,44 @@
 import { View } from 'riser'
-import { Box, Row, Column, Item } from '../ui'
+import { Box, Row, Column } from '../ui'
 
 @View( '/testing' )
 export class TestingView {
 	render( ) {
   	return (
-  		<Box>
-				<Row height='100px' color='purple'>
+  		<Box height='100%' width='100%' color='gray'>
+				<Row height='100px'>
 					{/* HEADER */}
-					<Item color='black' height='100px' width='100px' align='center'>A</Item>
-					<Item color='gray' height='100px' width='100px' align='center'>B</Item>
+					<Box color='black' height='100%' width='100px' vertical='middle' horizontal='middle'>A</Box>
+					<Box color='silver' height='100%' width='100px' vertical='middle' horizontal='middle'>B</Box>
 				</Row>
 				<Row height='100%'>
-					<Column width='20%' color='red'>
+					<Column width='20%'>
 						{/* SIDEBAR */}
-						<Item color='orange' height='20px' width='100%'>C</Item>
-						<Item color='coral' height='20px' width='100%'>D</Item>
+						<Box color='orange' height='20px' width='100%'>C</Box>
+						<Box color='coral' height='20px' width='100%'>D</Box>
 					</Column>
-					<Column width='80%' color='blue'>
+					<Column width='80%'>
 						{/* CONTENT */}
+						<Box color='blue' height='100%' width='100%'>E</Box>
 					</Column>
 				</Row>
-				<Row height='100px' color='green'>
+				<Row height='100px'>
 					{/* FOOTER */}
+					<Box color='green' height='100%' width='100%'>F</Box>
 				</Row>
 			</Box>
   	)
 	}
 }
 
-// ALIGNMENT
+const props = {
+	height: 'h',
+	width: 'w',
+	vertical: 'y',
+	horizontal: 'h',
+	background: 'b',
+	align: 'a',
+	space: 's',
+	margin: 'm',
+	padding: 'p'
+}

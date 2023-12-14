@@ -7,20 +7,20 @@ export class Row {
 	height: string = '0px'
 
 	@Property( )
-	color: string = 'white'
+	space: string = '0px'
 
 	@Property( )
-	spaces: string = '0px'
+	align: string
 
 	render( children: Children ) {
 		return (
   		<div style={ {
 				display: 'flex',
 				flexDirection: 'row',
-				backgroundColor: this.color,
 				width: '100%',
 				height: this.height,
-				gap: this.spaces,
+				gap: this.space,
+				justifyContent: this.align == 'middle' ? 'center' : this.align == 'end' ? 'end' : this.align == 'between' ? 'space-between' : this.align == 'around' ? 'space-around' : this.align == 'evenly' ? 'space-evenly' : 'start'
 			} }>
 				{ children }
   		</div>

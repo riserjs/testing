@@ -1,16 +1,8 @@
 import { Gateway, Request, Response, Logger, Expose, Inject } from 'riser'
 import { User } from './user.model'
-import { MongodbService } from '../mongodb.service'
 
 @Gateway( '/user' )
 export class UserGateway {
-
-	@Inject( )
-	mongodbService: MongodbService
-
-	onBoot( ) {
-		this.mongodbService.connect( )
-	}
 
 	@Expose( )
 	@Logger( )

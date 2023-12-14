@@ -9,7 +9,6 @@
     "build": "npx riser build"
   },
   "dependencies": {
-    "mongoose": "^8.0.0",
-    "riser": "^0.3.56"
+    "riser": "^0.3.58"
   }
 }
