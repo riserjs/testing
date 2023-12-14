@@ -4429,10 +4429,10 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-riser@^0.3.58:
-  version "0.3.58"
-  resolved "https://registry.yarnpkg.com/riser/-/riser-0.3.58.tgz#100ccf49e68ae7bb4085d7827bf0f3bc669fa2b5"
-  integrity sha512-uF9VtRuev7BJggw/DI/sgDpGJPLhpkKMdBWazrs+LV82duvGbeAf8NQf64zRkAULqgZHer1FS1M+RpV02VZNWA==
+riser@^0.3.62:
+  version "0.3.62"
+  resolved "https://registry.yarnpkg.com/riser/-/riser-0.3.62.tgz#3ed95d0e66e49a0906f738f1502cdf0b91f49a6a"
+  integrity sha512-kyLegpYHPPqbzzHDaDiOTUsWWnUXUKtSTT7alpeEi7sWWuPTfaazdK1NeBiiqGi++1/Mz3fjMkBsZebYk55m+A==
   dependencies:
     "@babel/cli" "^7.22.15"
     "@babel/core" "^7.22.15"
