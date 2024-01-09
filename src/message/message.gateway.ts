@@ -19,6 +19,7 @@ export class MessageGateway {
 	@Request( '/readall' )
 	async onReadAll( { message }: Request ): Promise < Response > {
 		const all = await this.Message.find( { users: { '$all': [ message.from, message.to ] } }, { _id: 0, __v: 0, users: 0 } ).sort( { $natural : -1 } ).limit( 10 )
+		console.log(all)
 		return Response( '/message/readall', all.reverse( ) )
 	}
 

@@ -10,7 +10,7 @@ export class MessageSchema {
   to: string
   
 	@Field( )
-	users: [ string ]
+	users: Array < string >
 
 	@Field( )
 	message: string
