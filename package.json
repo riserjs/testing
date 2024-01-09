@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "private": true,
+  "licence": "MIT",
   "scripts": {
     "dev": "npx riser dev",
     "build": "npx riser build"
   },
   "dependencies": {
-    "riser": "^0.3.63"
+    "riser": "^0.3.67"
   }
 }
