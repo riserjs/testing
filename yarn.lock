@@ -4499,10 +4499,10 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-riser@^0.3.67:
-  version "0.3.67"
-  resolved "https://registry.yarnpkg.com/riser/-/riser-0.3.67.tgz#53e9d0d45b8ea9d67b46f228db9ffe1526ea9385"
-  integrity sha512-wG3yewOJCPBDF1W7RLl4vw3Ulce3fHJ0Kazkx4dmVwMs8qX5gyWLq1y8gtOU3Sxdf8GL3FnHT+2fB8tYl8wCyA==
+riser@^0.3.71:
+  version "0.3.71"
+  resolved "https://registry.yarnpkg.com/riser/-/riser-0.3.71.tgz#82c1b84ba396aecacd8b26691d57b81c4b6cc205"
+  integrity sha512-1gfCODkKsMKe/8ef7RFgo+zsvr7tOqnbX/KgeIlRVOiaKfJlyJkjcvVx4Rge4V2R83M8a8Od1/AsapDwholecg==
   dependencies:
     "@babel/cli" "^7.22.15"
     "@babel/core" "^7.22.15"
@@ -4816,6 +4816,7 @@ stream-shift@^1.0.0:
   integrity sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==

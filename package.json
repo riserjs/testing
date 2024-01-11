@@ -10,6 +10,6 @@
     "build": "npx riser build"
   },
   "dependencies": {
-    "riser": "^0.3.67"
+    "riser": "^0.3.71"
   }
 }

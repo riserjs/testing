@@ -1,5 +1,5 @@
 import { View } from 'riser'
-import { Box, Row, Column } from '../ui'
+import { Box, Row, Column } from 'riser/interface'
 
 @View( '/testing' )
 export class TestingView {
@@ -30,6 +30,7 @@ export class TestingView {
   	)
 	}
 }
+
 
 const props = {
 	height: 'h',
