@@ -5,7 +5,7 @@ import { UserStorage } from './user.storage'
 @Component( )
 export class UserComponent {
 
-	@Inject( { type: 'storage', name: 'UserStorage' } )
+	@Inject( 'UserStorage' )
 	storage: UserStorage
 
 	@Observable( )

@@ -6,22 +6,35 @@ import { UserService } from './user.service'
 @Gateway( '/user' )
 export class UserGateway {
 
-	@Inject( { type: 'service', name: 'UserService' } )
+	@Inject( 'UserService' )
 	service: UserService
 
-	@Inject( { type: 'model', name: 'User' } )
-	User: Model < UserSchema >
+	@Inject( 'UserSchema' )
+	model: Model < UserSchema >
 
-	async onBoot( ) { }
+	async onBoot( ) {
+		/*new Promise( ( resolve, reject ) => {
+			this.model.findOne( { name: 'Sam' } ).exec()
+			.then( () => {
+				console.log( 'yes')
+				resolve('yes');
+			} ).catch(() => {
+				console.log('err')
+				reject('err')
+			})
+		} )
+
+		console.log( 'x' )*/
+	}
 
 	@Expose( )
 	@Logger( )
 	@Request( '/create' )
 	async onCreate( { message }: Request ): Promise < Response > {
 
-		const index = await this.User.read( { name: message } )
-		if ( !index ) await this.User.create( { name: message } )
-		const users = await this.User.read( { name: { $ne: message } }, true ) //not equal
+		const index = await this.model.read( { name: message } )
+		if ( !index ) await this.model.create( { name: message } )
+		const users = await this.model.read( { name: { $ne: message } }, true ) //not equal
 
 		return Response( '/user/read', users )
 	}
